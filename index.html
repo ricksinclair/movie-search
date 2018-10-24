@@ -17,7 +17,6 @@
       <div id="results">
         <h1>Results</h1>
       </div>
-      <hr class="results-rule" />
       <div></div>
     </div>
   </div>
@@ -53,7 +52,7 @@
         console.log(results);
         console.log("i is: " + i);
         console.log()
-        var div = $("<div>", { "id": i, "class": "row results-rule" });
+        var div = $("<div>", { "id": i, "class": "row" });
 
 
         $("#results").append(div);
@@ -65,14 +64,17 @@
           console.log("index of current object Array is: " + x + " Title is:" + results[x].Title);
           var poster = results[x].Poster
           cardClass = "c"
-          $("#" + i).append("<div id=card" + count + "><img  wclass=card-img-top, img-fluid, img-posterz, src=" + poster + "id=Poster" + x + " alt=card image cap></img><div class=card-body><h2 style=word wrap: break-word; class=card-title id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=h3" + x
-            + "> YEAR RELEASED: " + results[x].Year + "</p></div>  <ul class=list-group list-group-flush>" + "    <li class=list-group-item>  ITEM   NUMBER:" + count + "</li></ul></div> ")
+          $("#" + i).append("<div id=card" + count + "><img src=" + poster + "id=Poster" + count + "></img><div class=card-body><h2 id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=year" + count
+            + "> YEAR RELEASED: " + results[x].Year + "</p>   <p id=itemnumber" + count + ">  ITEM   NUMBER:" + count + "</p></div></div> ")
 
-          $("#card" + count + "").attr('class', 'card col-sm-6');
-          $("#title" + count + "").attr('class', 'col-sm-12');
+          $("#card" + count + "").attr('class', 'card col-sm-6 text-center d-block mx-auto');
+          $("#title" + count + "").attr('class', 'col-sm-12 card-title');
+          $("#itemnumber" + count + "").attr('class', 'col-sm-12 card-text');
+          $("#year" + count + "").attr('class', 'col-sm-12 card-text');
+          $("#poster" + count + "").attr('class', 'col-sm-12 d-block mx-auto img-fluid card-img-top');
 
         }
-        $("#" + i + "").append("<br><h5>PAGE: " + i + "</h5>");
+        $("#" + i + "").append("<h5>PAGE: " + i + "</h5>");
 
       });
     }
