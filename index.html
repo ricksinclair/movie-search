@@ -52,7 +52,7 @@
         console.log(results);
         console.log("i is: " + i);
         console.log()
-        var div = $("<div>", { "id": i, "class": "row" });
+        var div = $("<div>", { "id": i, "class": "container row" });
 
 
         $("#results").append(div);
@@ -65,7 +65,7 @@
           var poster = results[x].Poster
           cardClass = "c"
           $("#" + i).append("<div id=card" + count + "><img src=" + poster + "id=Poster" + count + "></img><div class=card-body><h2 id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=year" + count
-            + "> YEAR RELEASED: " + results[x].Year + "</p>   <p id=itemnumber" + count + ">  ITEM   NUMBER:" + count + "</p></div></div> ")
+            + "> YEAR RELEASED: " + results[x].Year + "</p>   <p id=itemnumber" + count + ">  RESULT# " + count + "</p></div></div> ")
 
           $("#card" + count + "").attr('class', 'card col-sm-6 text-center d-block mx-auto');
           $("#title" + count + "").attr('class', 'col-sm-12 card-title');
