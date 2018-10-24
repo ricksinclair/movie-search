@@ -64,14 +64,15 @@
           console.log("index of current object Array is: " + x + " Title is:" + results[x].Title);
           var poster = results[x].Poster
           cardClass = "c"
-          $("#" + i).append("<div id=card" + count + "><img src=" + poster + "id=Poster" + count + "></img><div class=card-body><h2 id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=year" + count
-            + "> YEAR RELEASED: " + results[x].Year + "</p>   <p id=itemnumber" + count + ">  RESULT# " + count + "</p></div></div> ")
+          $("#" + i).append("<div id=card" + count + "><img class=card-img-top src=" + poster + "id=Poster" + count + "></img><div class=card-body><h2 id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=year" + count
+            + "> YEAR RELEASED: " + results[x].Year + "</p>   <p id=itemnumber" + count + ">  RESULT#" + count + "</p></div></div> ")
 
           $("#card" + count + "").attr('class', 'card col-sm-6 text-center d-block mx-auto');
-          $("#title" + count + "").attr('class', 'col-sm-12 card-title');
-          $("#itemnumber" + count + "").attr('class', 'col-sm-12 card-text');
-          $("#year" + count + "").attr('class', 'col-sm-12 card-text');
-          $("#poster" + count + "").attr('class', 'col-sm-12 d-block mx-auto img-fluid card-img-top');
+          $("#title" + count + "").attr('class', 'col-12 card-title');
+          $("#Poster" + count + "").attr('class', 'card-img-top');
+
+          $("#itemnumber" + count + "").attr('class', 'col-12 card-text');
+          $("#year" + count + "").attr('class', 'col-12 card-text');
 
         }
         $("#" + i + "").append("<h5>PAGE: " + i + "</h5>");

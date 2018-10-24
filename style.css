@@ -4,7 +4,10 @@
   color: black;
   border-color: black;
 }
-img {
-  height: 400px;
-  width: 275px;
+
+@media (max-width: 400px) {
+  .img-resize {
+    height: 40%;
+    width: 40%;
+  }
 }
