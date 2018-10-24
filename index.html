@@ -10,20 +10,17 @@
 
 <body>
 
-  <div class="col-2"></div>
-  <div class="container col-8">
-    <div class="col-2">
+  <div class="container col-10">
 
-    </div>
 
     <div class="col-8" id="Results">
-      <h1 id="results">Results</h1>
+      <div id="results">
+        <h1>Results</h1>
+      </div>
       <hr class="results-rule" />
       <div></div>
     </div>
-    <div class="col-2"></div>
   </div>
-  <div class="col-2"></div>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous" />
   <style>
@@ -32,8 +29,14 @@
             border-width: 5px;
             color:black;
             border-color:black;
+        
           }
-          
+        .img-posterz{
+          height:483;
+          width:322;
+
+
+        }  
           </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -45,10 +48,9 @@
     var x;
     var responseLocal;
     var results;
-
+    var count = 0;
     function pageUpdate() {
       //         1. I want to  increment the page number that I pass to the Ajax call then make an Ajax request to the OMDB on each click of the button
-
       i++;
       $.ajax({
         url: "https://www.omdbapi.com/?s=" + userQuery + "&page=" + i + "&apikey=trilogy& plot=full",
@@ -68,20 +70,21 @@
 
 
         $("#results").append(div);
+        $("#" + i + "").append("<br><h5>PAGE: " + i + "</h5>");
 
         // 3. Then I want to  increment through each result (using variable x and setting it to less than 10 so that it will fetch each property i specify  for the full length of each page sent in the  response).
 
         for (x = 0; x < 10; x++) {
+          count++;
           console.log("index of current object Array is: " + x + " Title is:" + results[x].Title);
           var poster = results[x].Poster
 
-          $("#" + i).append("<div class=col-6><h2 id=title" + x + ">  " + results[x].Title + "</h2><hr class=results-rule><h3 id=h3" + x
-            + "> YEAR RELEASED: " + results[x].Year + "</h3><hr><br><hr>" + "<img  class=img-fluid src=" + poster + "id=Poster" + x + "></img><br><hr><br></div> ")
+          $("#" + i).append("<div class=card style=width: 300px;><img  width=322 height=483 class=card-img-top img-fluid img-posterz src=" + poster + "id=Poster" + x + " alt=card image cap></img><div class=card-body><p style=word wrap: break-word; class=card-title id=title" + x + ">  " + results[x].Title + "</p> <p class=card-text id=h3" + x
+            + "> YEAR RELEASED: " + results[x].Year + "</p></div>  <ul class=list-group list-group-flush>" + "    <li class=list-group-item>  ITEM   NUMBER:" + count + "</li></ul></div> ")
 
 
 
         }
-        $("#" + i + "").append("<br><h2>PAGE: " + i + "</h2><br> ");
 
       });
     }
