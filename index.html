@@ -59,7 +59,7 @@
         // 3. Then I want to  increment through each result (using variable x and setting it to less than 10 so that it will fetch each property i specify  for the full length of each page sent in the  response).
 
         for (x = 0; x < 10; x++) {
-          console.log("x is: " + x + "Title is:" + results[x].Title);
+          console.log("x is: " + x + " Title is:" + results[x].Title);
           var poster = results[x].Poster
 
           $("#" + i).append("<div class=col-6><h2 id=title" + x + ">  " + results[x].Title + "</h2><hr><h3 id=h3" + x
