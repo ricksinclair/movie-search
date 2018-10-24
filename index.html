@@ -35,6 +35,7 @@
     var results;
 
     function pageUpdate() {
+      //         1. I want to  increment the page number that I pass to the Ajax call then make an Ajax request to the OMDB on each click of the button
 
       i++;
       $.ajax({
@@ -82,7 +83,6 @@
 
 
       $("#refresh").click(function () {
-        //         1. I want to  increment the page number that I pass to the Ajax call then make an Ajax request to the OMDB on each click of the button
 
         pageUpdate();
       });
