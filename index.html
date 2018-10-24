@@ -57,7 +57,6 @@
 
 
         $("#results").append(div);
-        $("#" + i + "").append("<br><h5>PAGE: " + i + "</h5>");
 
         // 3. Then I want to  increment through each result (using variable x and setting it to less than 10 so that it will fetch each property i specify  for the full length of each page sent in the  response).
 
@@ -65,13 +64,15 @@
           count++;
           console.log("index of current object Array is: " + x + " Title is:" + results[x].Title);
           var poster = results[x].Poster
-
-          $("#" + i).append("<div class=card style=width: 300px;><img  wclass=card-img-top, img-fluid, img-posterz, src=" + poster + "id=Poster" + x + " alt=card image cap></img><div class=card-body><p style=word wrap: break-word; class=card-title id=title" + x + ">  " + results[x].Title + "</p> <p class=card-text id=h3" + x
+          cardClass = "c"
+          $("#" + i).append("<div id=card" + count + "><img  wclass=card-img-top, img-fluid, img-posterz, src=" + poster + "id=Poster" + x + " alt=card image cap></img><div class=card-body><h2 style=word wrap: break-word; class=card-title id=title" + count + ">  " + results[x].Title + "</h2> <p class=card-text id=h3" + x
             + "> YEAR RELEASED: " + results[x].Year + "</p></div>  <ul class=list-group list-group-flush>" + "    <li class=list-group-item>  ITEM   NUMBER:" + count + "</li></ul></div> ")
 
-
+          $("#card" + count + "").attr('class', 'card col-sm-6');
+          $("#title" + count + "").attr('class', 'col-sm-12');
 
         }
+        $("#" + i + "").append("<br><h5>PAGE: " + i + "</h5>");
 
       });
     }
@@ -87,6 +88,7 @@
       $("#refresh").click(function () {
 
         pageUpdate();
+
       });
     });
 
@@ -100,6 +102,7 @@
 
 
   </script>
+
   <button class="btn btn-primary" id="refresh">Refresh</button>
 
 </body>
