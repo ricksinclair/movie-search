@@ -1,0 +1,22 @@
+.result-card {
+    color: #bebece;
+    margin:20px;
+    background-color: #4841a9;
+    padding: 20px 30px;
+    height: min-content;
+    border-radius: 10px;
+    justify-self:right;
+    min-width: 250px;
+
+;
+}
+
+.result-card:last-child{
+    margin-right: auto;
+    margin-left:110px;
+}
+
+
+.movie-title{
+    max-width: 250px;
+}
