@@ -7,7 +7,6 @@ import PopupUtil from "./components/animation-util/PopUpUtil";
 
 const baseURL = "https://www.omdbapi.com/?s=";
 
-
 function App() {
     const [movies, setMovies] = useState<any>([
         {
@@ -75,7 +74,7 @@ function App() {
 
                 movies.map(
                     (movie: any) => (
-                        <ResultCard key={`${movie.imdbID}`} loading={isPending} title={movie.Title} poster={movie.Poster} Year={movie.Year}/>)
+                        <ResultCard key={`${movie.imdbID}`} imdbID = {movie.imdbID} loading={isPending} title={movie.Title} poster={movie.Poster} Year={movie.Year}/>)
 
                 )}
 
