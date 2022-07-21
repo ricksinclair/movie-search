@@ -8,7 +8,8 @@
     justify-self:right;
     min-width: 250px;
 
-;
+    box-shadow: 0 4px 8px 0 rgb(60, 59, 79), 0 2px 2px -1px rgb(64, 57, 147);
+
 }
 
 .result-card:last-child{
