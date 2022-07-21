@@ -73,9 +73,9 @@ function App() {
             {
 
                 movies.map(
-                    (movie: any) => (<ResultCard key={`${movie.imdbID}`} imdbID={movie.imdbID} loading={isPending}
-                                                 title={movie.Title} poster={movie.Poster} Year={movie.Year}/>)
-                )}
+                    (movie: any) => (<li key={`${movie.imdbID}`}><ResultCard  imdbID={movie.imdbID} loading={isPending}
+                                                 title={movie.Title} poster={movie.Poster} Year={movie.Year}/></li>)
+                     )}
 
 
         </ul>)
@@ -92,8 +92,11 @@ function App() {
                 {movies.length > 0 &&
                     <div className="result-list-area">
                         <h1 className="result-title">Results</h1>
+                        <div className="list-container">
 
-                        {returnMarkup()}
+                            {returnMarkup()}
+
+                        </div>
 
                     </div>
                 }

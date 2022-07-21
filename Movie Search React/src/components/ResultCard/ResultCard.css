@@ -8,6 +8,11 @@ a.card-link:visited{
     text-decoration: none;
 }
 
+li{
+    list-style-type: none;
+
+}
+
 .result-card {
     color: #bebece;
     margin:20px;
@@ -28,7 +33,7 @@ a.card-link:visited{
 }
 
 .result-card:hover{
-    box-shadow: 0 2px 6px 0 rgb(91, 89, 119), 0 1px 9px -1px rgb(89, 80, 204);
+    box-shadow: 0 4px 12px 0 rgb(91, 89, 119), 0 3px 12px -1px rgb(89, 80, 204);
 
 }
 
