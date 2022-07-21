@@ -58,6 +58,15 @@ ul.movie-list{
     padding-bottom:20px;
 
 }
+@media all and (max-width:400px){
+
+
+    .list-container{
+        padding:0;
+    }
+}
+
+
 
 
 
