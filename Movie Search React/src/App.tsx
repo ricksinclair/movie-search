@@ -36,28 +36,28 @@ function App() {
     ])
     const [isPending, setIsPending] = useState<any>(true)
 
-    const[userQuery, setUserQuery] = useState('star wars')
+    const [userQuery, setUserQuery] = useState('star wars')
     useEffect(() => {
 
-       fetch(`${baseURL}${userQuery}&page=1&apikey=a5c7c0be&plot=full`).then(async res => {
-             setIsPending(false)
+        fetch(`${baseURL}${userQuery}&page=1&apikey=a5c7c0be&plot=full`).then(async res => {
+            setIsPending(false)
             return await res.json()
         }).then(
-             data => {
-                const res =  data.Search
-                 if (res)
-                setMovies((movies: any) => [...res])
-                 else
-                     setMovies([])
+            data => {
+                const res = data.Search
+                if (res)
+                    setMovies((movies: any) => [...res])
+                else
+                    setMovies([])
 
                 console.log(res)
             }
-        ).then(()=> {
+        ).then(() => {
                 setIsPending(false);
-                if(movies.length==0)
-                    return(<div><h1>NO Results</h1></div>)
+                if (movies.length == 0)
+                    return (<div><h1>NO Results</h1></div>)
                 else
-                returnMarkup();
+                    returnMarkup();
             }
         ).catch(e => console.error(e))
 
@@ -65,17 +65,16 @@ function App() {
 
     useEffect(() => {
         returnMarkup()
-    }, [isPending,  movies, userQuery]);
+    }, [isPending, movies, userQuery]);
 
 
-    const returnMarkup = ()=>{
-        return( <ul className="movie-list">
+    const returnMarkup = () => {
+        return (<ul className="movie-list">
             {
 
                 movies.map(
-                    (movie: any) => (
-                        <ResultCard key={`${movie.imdbID}`} imdbID = {movie.imdbID} loading={isPending} title={movie.Title} poster={movie.Poster} Year={movie.Year}/>)
-
+                    (movie: any) => (<ResultCard key={`${movie.imdbID}`} imdbID={movie.imdbID} loading={isPending}
+                                                 title={movie.Title} poster={movie.Poster} Year={movie.Year}/>)
                 )}
 
 
@@ -90,8 +89,8 @@ function App() {
             <SearchCard setUserQuery={setUserQuery}/>
 
             <PopupUtil>
-           {   movies.length > 0 &&
-               <div className="result-list-area">
+                {movies.length > 0 &&
+                    <div className="result-list-area">
                         <h1 className="result-title">Results</h1>
 
                         {returnMarkup()}
