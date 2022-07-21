@@ -22,7 +22,7 @@ a.card-link:visited{
 
 }
 
-.result-card:visited{
+.result-card:active{
     background-color: #2f2980;
 
 }
